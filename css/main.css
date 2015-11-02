@@ -1,0 +1,20 @@
+
+.logo {
+  max-height: 50%;
+  max-width: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+body {
+  background-color: #B6B6B6;
+}
+
+blockquote {
+  position: absolute;
+  margin-top: 0 auto;
+}
