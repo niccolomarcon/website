@@ -1,5 +1,5 @@
 
-.logo {
+img {
   max-height: 50%;
   max-width: 50%;
   position: absolute;
@@ -15,6 +15,12 @@ body {
 }
 
 blockquote {
+  max-width: 50%;
   position: absolute;
-  margin-top: 0 auto;
+  margin-left: 25%;
+  top: 75%;
+}
+
+blockquote > p {
+  text-align: justify;
 }
