@@ -23,18 +23,9 @@ body {
 
 blockquote {
   max-width: 50%;
-  /*position: absolute;*/
-  /*margin-left: 25%;*/
-  /*top: 75%;*/
-  /*left: 0;
-  right: 0;*/
-  
   display:inline-block;
-  *display:inline;/* IE*/
-  *zoom:1;/* IE*/
+  *display:inline;
+  *zoom:1;
   text-align:left;
-}
-
-blockquote > p {
-  text-align: justify;
+  margin-top: 10px;
 }
