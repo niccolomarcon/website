@@ -11,14 +11,28 @@ img {
 }
 
 body {
-  background-color: #B6B6B6;
+  /*background-color: #B6B6B6;*/
+}
+
+.wrapper {
+  width:100%;
+  text-align:center;
+  position: absolute;
+  top: 75%;
 }
 
 blockquote {
   max-width: 50%;
-  position: absolute;
-  margin-left: 25%;
-  top: 75%;
+  /*position: absolute;*/
+  /*margin-left: 25%;*/
+  /*top: 75%;*/
+  /*left: 0;
+  right: 0;*/
+  
+  display:inline-block;
+  *display:inline;/* IE*/
+  *zoom:1;/* IE*/
+  text-align:left;
 }
 
 blockquote > p {
