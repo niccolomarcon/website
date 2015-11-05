@@ -8,10 +8,12 @@ img {
   left: 0;
   right: 0;
   margin: auto;
+  /*transform: rotate(-45deg);*/
 }
 
 body {
-  /*background-color: #B6B6B6;*/
+  background-color: #dedede;
+  font-family: 'Product Sans', Arial, sans-serif;
 }
 
 .wrapper {
@@ -28,4 +30,9 @@ blockquote {
   *zoom:1;
   text-align:left;
   margin-top: 10px;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
 }
