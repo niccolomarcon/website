@@ -4,5 +4,7 @@ $(document).ready(function() {
     $('p').text(data[random].quote);
     $('footer').text(data[random].author);
   });
+  $("img").fadeIn();
+  $(".wrapper").fadeIn();
 });
 
