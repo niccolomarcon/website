@@ -1,9 +1,21 @@
 $(document).ready(function() {
+  
   $.getJSON('./js/quotes.json', function(data) {
     var random = Math.floor((Math.random() * data.length));
-    $('p').text(data[random].quote);
+    $('blockquote > p').text(data[random].quote);
     $('blockquote > footer').text(data[random].author);
-    $('img').fadeIn('slow');
     $('.wrapper').fadeIn('slow');
   });
+  
+  var img = new Image();
+  
+  img.onload = function() {
+    $('.bg')
+      //.addClass('fin')
+      .css('background-image', 'url(./media/bg.jpg)')
+      .css('animation-play-state', 'running')
+      .css('-webkit-animation-play-state', 'running');
+  };
+  
+  img.src = './media/bg.jpg';
 });
