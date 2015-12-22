@@ -1,0 +1,29 @@
+{
+  "name": "niccolomarcon",
+  "version": "1.0.0",
+  "description": "The personal website of Niccolò Marcon",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/niccolomarcon/niccolomarcon.github.com"
+  },
+  "keywords": [
+    "website",
+    "niccolomarcon",
+    "marcon",
+    "niccolò",
+    "niccolo"
+  ],
+  "author": "Niccolò Marcon @niccolomarcon",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-minjson": "^0.3.0"
+  }
+}
