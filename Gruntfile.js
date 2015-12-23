@@ -29,6 +29,12 @@ module.exports = function(grunt) {
           'dist/index.html': 'index.html'
         }
       }
+    },
+    copy: {
+      main: {
+        src: 'media/*',
+        dest: 'dist/',
+      },
     }
   });
 
@@ -36,7 +42,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-minjson');
   grunt.loadNpmTasks('grunt-processhtml');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
-  grunt.registerTask('default', ['uglify', 'cssmin', 'minjson', 'processhtml']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'minjson', 'processhtml', 'copy']);
 
 };
