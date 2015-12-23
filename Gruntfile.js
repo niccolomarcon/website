@@ -35,6 +35,12 @@ module.exports = function(grunt) {
         src: 'media/*',
         dest: 'dist/',
       },
+    },
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
     }
   });
 
@@ -43,7 +49,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-minjson');
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-gh-pages');
 
   grunt.registerTask('default', ['uglify', 'cssmin', 'minjson', 'processhtml', 'copy']);
+  grunt.registerTask('deploy', ['default', 'gh-pages']);
 
 };
