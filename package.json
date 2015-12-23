@@ -1,14 +1,11 @@
 {
-  "name": "niccolomarcon",
+  "name": "website",
   "version": "1.0.0",
   "description": "The personal website of Niccolò Marcon",
   "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "github.com/niccolomarcon/niccolomarcon.github.com"
+    "url": "https://github.com/niccolomarcon/website.git"
   },
   "keywords": [
     "website",
