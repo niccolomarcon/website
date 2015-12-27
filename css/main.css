@@ -59,7 +59,7 @@ svg {
   fill: black;
 }
 
-.social {
+.links {
   width:100%;
   top: 0px;
   text-align: center;
@@ -180,4 +180,12 @@ a {
   height: 100%;
   margin: 0px;
   padding: 0px;
+}
+
+.linkedin:hover {
+  fill: #0177B5;
+}
+
+.works:hover {
+  fill: #808080;
 }
