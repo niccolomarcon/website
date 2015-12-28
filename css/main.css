@@ -4,7 +4,7 @@ h1 {
   margin-top: 40vh;
   margin-bottom: 0px;
   color: white;
-  text-shadow: 2px 4px 4px #999999; 
+  text-shadow: 2px 4px 4px #626262; /* #999999 */
 }
 
 html, body {
@@ -20,7 +20,7 @@ blockquote {
   margin: 0 0 20px;
   font-size: 2.5vh;
   border-left: 5px solid #EEE;
-  
+
   max-width: 50%;
   display: inline-block;
   *display: inline;
@@ -88,24 +88,24 @@ a {
   -webkit-filter: blur(25px);
   -moz-filter: blur(25px);
   -o-filter: blur(25px);
-  
+
   background-image: url(data:image/jpeg;base64,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);
-  
+
   animation-name: blurout;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
   animation-play-state: paused;
-  
+
   -webkit-animation-name: blurout;
   -webkit-animation-duration: 1.5s;
   -webkit-animation-fill-mode: forwards;
   -webkit-animation-play-state: paused;
-  
+
   -moz-animation-name: blurout;
   -moz-animation-duration: 1.5s;
   -moz-animation-fill-mode: forwards;
   -moz-animation-play-state: paused;
-  
+
   -o-animation-name: blurout;
   -o-animation-duration: 1.5s;
   -o-animation-fill-mode: forwards;
