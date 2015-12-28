@@ -1,10 +1,11 @@
 h1 {
   font-size: 10vh;
   text-align: center;
-  margin-top: 40vh;
+  margin-top: 44vh;
   margin-bottom: 0px;
   color: white;
   text-shadow: 2px 4px 4px #626262; /* #999999 */
+  padding: 0px;
 }
 
 html, body {
@@ -43,6 +44,7 @@ blockquote footer::before {
 }
 
 svg {
+  min-width: 48px;
   width: 4vw;
   fill: white;
   -webkit-transition: fill 0.75s;
@@ -83,6 +85,7 @@ a {
   margin: 0px;
   padding: 0px;
   background-size: cover;
+  
   filter: blur(25px);
   -webkit-filter: blur(25px);
   -moz-filter: blur(25px);
@@ -187,4 +190,16 @@ a {
 
 .works:hover {
   fill: #808080;
+}
+
+@media screen and (max-width: 466px) {
+  h1 {
+    margin-top: 38vh;
+  }
+}
+
+@media screen and (max-height: 610px) {
+  h1 {
+    font-size: 63px;
+  }
 }
