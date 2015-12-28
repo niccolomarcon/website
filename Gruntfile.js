@@ -41,6 +41,11 @@ module.exports = function(grunt) {
         base: 'dist'
       },
       src: ['**']
+    },
+    shell: {
+      dep: {
+        command: 'rm -rf ~/Sites/dist && mv dist ~/Sites'
+      }
     }
   });
 
@@ -50,8 +55,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-gh-pages');
+  grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('default', ['uglify', 'cssmin', 'minjson', 'processhtml', 'copy']);
   grunt.registerTask('deploy', ['default', 'gh-pages']);
+  grunt.registerTask('local-deploy', ['default', 'shell:dep']);
 
 };
