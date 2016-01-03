@@ -77,7 +77,7 @@ a {
 }
 
 .bg {
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -85,6 +85,8 @@ a {
   margin: 0px;
   padding: 0px;
   background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
   
   filter: blur(25px);
   -webkit-filter: blur(25px);
