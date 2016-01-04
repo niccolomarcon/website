@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
-      my_target: {
+      target: {
         files: {
           'dist/js/main.min.js': 'js/main.js'
         }
@@ -46,6 +46,16 @@ module.exports = function(grunt) {
       dep: {
         command: 'rm -rf ~/Sites/dist && mv dist ~/Sites'
       }
+    },
+    imagemin: {
+      static: {
+        options: {
+          optimizationLevel: 7
+        },
+        files: {
+          'dist/media/bg.jpg': 'media/bg.jpg'
+        }
+      }
     }
   });
 
@@ -56,9 +66,17 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-newer');
 
-  grunt.registerTask('default', ['uglify', 'cssmin', 'minjson', 'processhtml', 'copy']);
+  grunt.registerTask('default', [
+    'uglify',
+    'cssmin',
+    'minjson',
+    'processhtml',
+    'newer:imagemin:static'
+  ]);
   grunt.registerTask('deploy', ['default', 'gh-pages']);
-  grunt.registerTask('local-deploy', ['default', 'shell:dep']);
+  grunt.registerTask('local', ['default', 'shell:dep']);
 
 };
