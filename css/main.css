@@ -204,4 +204,8 @@ a {
   h1 {
     font-size: 63px;
   }
+  
+  blockquote {
+    font-size: 15.75px;
+  }
 }
