@@ -10,13 +10,7 @@ $(document).ready(function() {
     $('.wrapper').fadeOut('slow', function() { writeQuote(quote, author); });
   }
 
-  // Loading the quote
-  $.getJSON('js/quotes.json', function(data) {
-    var random = Math.floor((Math.random() * data.length));
-    writeQuote(data[random].quote, data[random].author);
-  });
-
-  // Loading the bg image
+  // Dummy image used to "prefetch" the really big background image
   var img = new Image();
   img.onload = function() {
     $('.bg')
@@ -26,7 +20,6 @@ $(document).ready(function() {
       .css('-moz-animation-play-state', 'running')
       .css('-o-animation-play-state', 'running');
   };
-  img.src = 'media/bg.jpg';
 
   // Someone said Konami code(?)
   new Konamiz().onStart(function() {
@@ -41,5 +34,22 @@ $(document).ready(function() {
       'Deep Thought'
     );
   });
+
+  // Used to avoid the annoying display problem on chrome for android
+  $(window).resize('resizeBackground');
+  function resizeBackground() {
+    $('.bg').height($(window).height() + 60);
+  }
+
+  // Start loading the background
+  img.src = 'media/bg.jpg';
+
+  // Loading the quote
+  $.getJSON('js/quotes.json', function(data) {
+    var random = Math.floor((Math.random() * data.length));
+    writeQuote(data[random].quote, data[random].author);
+  });
+
+  resizeBackground();
 
 });
