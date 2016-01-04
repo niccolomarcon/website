@@ -69,6 +69,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-newer');
 
+  var msg = grunt.option('m') || '';
+
   grunt.registerTask('default', [
     'uglify',
     'cssmin',
@@ -76,7 +78,11 @@ module.exports = function(grunt) {
     'processhtml',
     'newer:imagemin:static'
   ]);
-  grunt.registerTask('deploy', ['default', 'gh-pages']);
+  grunt.registerTask('deploy', function() {
+    grunt.task.run('default');
+    if (msg != '') { grunt.config.set('gh-pages.options.message', msg); }
+    grunt.task.run('gh-pages');
+  });
   grunt.registerTask('local', ['default', 'shell:dep']);
 
 };
