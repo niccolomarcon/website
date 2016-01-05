@@ -41,6 +41,10 @@ $(document).ready(function() {
     $('.bg').height($(window).height() + 60);
   }
 
+  $('#works').click(function() {
+    $('.container').fadeOut('slow');
+  });
+
   // Start loading the background
   img.src = 'media/bg.jpg';
 
