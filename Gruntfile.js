@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     },
     copy: {
       main: {
-        src: 'media/*',
+        src: 'favicon.ico',
         dest: 'dist/',
       },
     },
@@ -76,7 +76,8 @@ module.exports = function(grunt) {
     'cssmin',
     'minjson',
     'processhtml',
-    'newer:imagemin:static'
+    'newer:imagemin:static',
+    'copy'
   ]);
   grunt.registerTask('deploy', function() {
     grunt.task.run('default');
