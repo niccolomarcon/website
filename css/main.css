@@ -16,6 +16,30 @@ html, body {
   padding: 0px;
 }
 
+h1::selection {
+  background: #acacac;
+}
+
+h1::-moz-selection {
+  background: #acacac;
+}
+
+blockquote p::selection {
+  background: #acacac;
+}
+
+blockquote p::-moz-selection {
+  background: #acacac;
+}
+
+blockquote footer::selection {
+  background: #acacac;
+}
+
+blockquote footer::-moz-selection {
+  background: #acacac;
+}
+
 blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
