@@ -10,6 +10,17 @@ $(document).ready(function() {
     $('.wrapper').fadeOut('slow', function() { writeQuote(quote, author); });
   }
 
+  function lenny() {
+    setInterval(function() {
+      if(new Date.getHours() % 12 == 4 && new Date.getMinutes() == 20) {
+        $('.lenny').css('display', 'block');
+        setTimeout(function() {
+          $('.lenny').css('display', 'none');
+        }, 1500);
+      }
+    }, 1000);
+  }
+
   // Dummy image used to "prefetch" the really big background image
   var img = new Image();
   img.onload = function() {
@@ -55,5 +66,7 @@ $(document).ready(function() {
   });
 
   resizeBackground();
+  
+  lenny();
 
 });

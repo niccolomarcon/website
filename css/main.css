@@ -234,3 +234,28 @@ a {
     font-size: 15.75px;
   }
 }
+
+.lenny {
+  color: white;
+  position: relative;
+  font-size: 20px;
+  display: none;
+  
+  animation-name: lennyanim;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+
+.lennyc {
+  position: absolute;
+  margin-top: 30vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@keyframes lennyanim {
+  from { margin-left: 0% }
+  to { margin-left: 100%; }
+}
