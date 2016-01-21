@@ -10,13 +10,19 @@ $(document).ready(function() {
     $('.wrapper').fadeOut('slow', function() { writeQuote(quote, author); });
   }
 
+  var displayed = false;
   function lenny() {
     setInterval(function() {
-      if(new Date.getHours() % 12 == 4 && new Date.getMinutes() == 20) {
-        $('.lenny').css('display', 'block');
-        setTimeout(function() {
-          $('.lenny').css('display', 'none');
-        }, 1500);
+      if (new Date().getHours() % 12 == 4 && new Date().getMinutes() == 20) {
+        if (!displayed) {
+          displayed = true;
+          $('.lenny').css('display', 'block');
+          setTimeout(function() {
+            $('.lenny').css('display', 'none');
+          }, 1500);
+        }
+      } else {
+        displayed = false;
       }
     }, 1000);
   }
@@ -62,7 +68,7 @@ $(document).ready(function() {
   });
 
   resizeBackground();
-  
+
   lenny();
 
 });

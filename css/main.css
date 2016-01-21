@@ -112,7 +112,7 @@ a {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  
+
   filter: blur(25px);
   -webkit-filter: blur(25px);
   -moz-filter: blur(25px);
@@ -229,7 +229,7 @@ a {
   h1 {
     font-size: 63px;
   }
-  
+
   blockquote {
     font-size: 15.75px;
   }
@@ -240,13 +240,12 @@ a {
   position: relative;
   font-size: 20px;
   display: none;
-  
+
   animation-name: lennyanim;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
 }
-
 
 .lennyc {
   position: absolute;
