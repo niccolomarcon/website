@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     cssmin: {
       target: {
         files: {
-          'dist/css/main.min.css': 'css/main.css'
+          'dist/css/main.min.css': ['css/main.css', 'css/print.css']
         }
       }
     },
@@ -53,7 +53,8 @@ module.exports = function(grunt) {
           optimizationLevel: 7
         },
         files: {
-          'dist/media/bg.jpg': 'media/bg.jpg'
+          'dist/media/bg.jpg': 'media/bg.jpg',
+          'dist/media/og.png': 'media/og.png'
         }
       }
     }

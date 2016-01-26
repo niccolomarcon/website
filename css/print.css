@@ -1,0 +1,11 @@
+@media print {
+  
+}
+
+@media print and (orientation: landscape) {
+    /* landscape styles */
+}
+
+@media print and (orientation: portrait) {
+    /* portrait styles */
+}
