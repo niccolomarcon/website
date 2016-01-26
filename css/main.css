@@ -101,6 +101,10 @@ a {
   display: none;
 }
 
+.container noscript .wrapper {
+  display: block;
+}
+
 .bg {
   position: fixed;
   top: 0px;

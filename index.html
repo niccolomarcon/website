@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it"> <!-- http://www.w3schools.com/html/html5_app_cache.asp TODO add manifest for caching https://github.com/gunta/grunt-manifest -->
   <head>
 
     <meta charset="utf-8">
@@ -17,7 +17,8 @@
     <link rel=”publisher” href=”https://plus.google.com/113321058769876748473”>
     <title>Niccolò Marcon</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <!-- build:css css/main.min.css -->
+    <!-- TODO divide the stylesheet in essential (which will be 'inlined') and main which will be defer -->
+    <!-- build:css inline dist/css/main.min.css -->
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/print.css">
@@ -66,7 +67,7 @@
       
       <!-- Please Google fix the chrome's noscript bug (more info here https://goo.gl/e7H67v) -->
       <noscript>
-        <div class="wrapper" style="display: block;">
+        <div class="wrapper">
           <blockquote>
             <p>All HTML and no JavaScript makes this page a dull website</p>
             <footer>This site with JS disabled</footer>
@@ -77,10 +78,10 @@
     
     <div class="lennyc"><div class="lenny">( ͡° ͜ʖ ͡° )</div></div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/FlorianBezagu/Konamiz/master/konamiz.min.js"></script>
-    <!-- build:js js/main.min.js -->
-    <script src="js/main.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script defer src="https://cdn.rawgit.com/FlorianBezagu/Konamiz/master/konamiz.min.js"></script>
+    <!-- build:[src] js/main.min.js -->
+    <script defer src="js/main.js"></script>
     <!-- /build -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

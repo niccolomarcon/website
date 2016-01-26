@@ -56,7 +56,7 @@ module.exports = function(grunt) {
     },
     shell: {
       dep: {
-        command: 'rm -rf ~/Sites/dist && mv dist ~/Sites'
+        command: 'rm -rf ~/Sites/dist && cp -r dist ~/Sites'
       }
     },
     imagemin: {
