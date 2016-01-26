@@ -12,7 +12,11 @@ module.exports = function(grunt) {
     cssmin: {
       target: {
         files: {
-          'dist/css/main.min.css': ['css/main.css', 'css/print.css']
+          'dist/css/main.min.css': [
+            'css/font.css',
+            'css/main.css',
+            'css/print.css'
+          ]
         }
       }
     },
@@ -65,6 +69,22 @@ module.exports = function(grunt) {
           'dist/media/og.png': 'media/og.png'
         }
       }
+    },
+    xml_sitemap: {
+      custom_option: {
+        options: {
+          dest: 'dist/',
+          siteRoot: 'http://niccolomarcon.github.io/website',
+          priority: 1.0
+        },
+        files: [
+          {
+            expand: true,
+            cwd: './',
+            src: ['./index.html']
+          }
+        ]
+      }
     }
   });
 
@@ -77,6 +97,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-xml-sitemap');
 
   var msg = grunt.option('m') || '';
 
@@ -86,7 +107,8 @@ module.exports = function(grunt) {
     'minjson',
     'processhtml',
     'newer:imagemin:static',
-    'copy'
+    'copy',
+    'xml_sitemap'
   ]);
   grunt.registerTask('deploy', function() {
     grunt.task.run('default');
