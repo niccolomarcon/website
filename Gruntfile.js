@@ -32,8 +32,16 @@ module.exports = function(grunt) {
     },
     copy: {
       main: {
-        src: 'favicon.ico',
-        dest: 'dist/',
+        files: [
+          {
+            src: 'favicon.ico',
+            dest: 'dist/'
+          },
+          {
+            src: 'robots.txt',
+            dest: 'dist/',
+          }
+        ]
       },
     },
     'gh-pages': {
