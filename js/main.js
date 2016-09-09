@@ -51,12 +51,25 @@ $(document).ready(function() {
       'Deep Thought'
     );
   });
+  new Konamiz(['c', 'h', 'u', 'c', 'k']).onStart(function() {
+    var url = 'http://api.icndb.com/jokes/random';
+    var opt = {
+      escape: 'javascript',
+      limitTo: '[nerdy]'
+    };
+    $.getJSON(url, opt, function(data) {
+      changeQuote(
+        data.value.joke,
+        'Chuck\'s life'
+      );
+    });
+  });
 
-  // Used to avoid the annoying display problem on chrome for android
-  $(window).resize('resizeBackground');
-  function resizeBackground() {
-    $('.bg').height($(window).height() + 60);
-  }
+  //  // Used to avoid the annoying display problem on chrome for android
+  //  $(window).resize('resizeBackground');
+  //  function resizeBackground() {
+  //    $('.bg').height($(window).height() + 60);
+  //  }
 
   // Start loading the background
   img.src = 'media/bg.jpg';
@@ -67,8 +80,7 @@ $(document).ready(function() {
     writeQuote(data[random].quote, data[random].author);
   });
 
-  resizeBackground();
-
+  //resizeBackground();
   lenny();
 
 });
