@@ -28,15 +28,15 @@ $(document).ready(function() {
   }
 
   // Dummy image used to "prefetch" the really big background image
-  var img = new Image();
-  img.onload = function() {
-    $('.bg')
-      .css('background-image', 'url(media/bg.jpg)')
-      .css('animation-play-state', 'running')
-      .css('-webkit-animation-play-state', 'running')
-      .css('-moz-animation-play-state', 'running')
-      .css('-o-animation-play-state', 'running');
-  };
+//  var img = new Image();
+//  img.onload = function() {
+//    $('.bg')
+//      .css('background-image', 'url(media/bg.jpg)')
+//      .css('animation-play-state', 'running')
+//      .css('-webkit-animation-play-state', 'running')
+//      .css('-moz-animation-play-state', 'running')
+//      .css('-o-animation-play-state', 'running');
+//  };
 
   // Someone said Konami code(?)
   new Konamiz().onStart(function() {
@@ -72,7 +72,7 @@ $(document).ready(function() {
   //  }
 
   // Start loading the background
-  img.src = 'media/bg.jpg';
+  // img.src = 'media/bg.jpg';
 
   // Loading the quote
   $.getJSON('js/quotes.json', function(data) {
