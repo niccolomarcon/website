@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>test</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,700" rel="stylesheet">
+    <style>
+      /*
+      colori #282c35 e #e06c75
+      emoji: "✌️"
+      */
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        
+        color: #e06c75;
+        background-color: #282c35;
+      }
+      
+      #landing {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: table;
+      }
+      
+      #title {
+        display: table-cell;
+        vertical-align: middle;
+        width: 50%;
+        text-align: right;
+        padding-right: 10px;
+        
+        font-size: 2.5em;
+      }
+      
+      #name {
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 700;
+        margin-bottom: 0px;
+      }
+      
+      #subname {
+        margin-top: 0px;
+      }
+      
+      #subname, #quote footer, #quote p::before, #quote p::after {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        font-weight: 300;
+      }
+      
+      #line {
+        border-left: 1px solid #e06c75;
+        height: 50vh;
+        margin-top: 25vh;
+        position: absolute;
+      }
+      
+      #quote {
+        display: table-cell;
+        padding-left: 10px;
+        vertical-align: middle;
+        
+        font-size: 2em;
+      }
+      
+      #quote p {
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        margin-bottom: 0px;
+      }
+      
+      #quote footer {
+        font-size: .6em;
+      }
+      
+      #quote p::before {
+        content: "\201C";
+      }
+      #quote p::after {
+        content: "\201E";
+      }
+      
+      #quote p::before, #quote p::after {
+        font-weight: bold;
+      }
+      
+      #quote footer::before {
+        content: '\2014 \00A0';
+      }
+    </style>
+
+  </head>
+  <body>
+    
+    <div id="landing">
+      <div id="title">
+        <h1 id="name">Niccolò Marcon</h1>
+        <p id="subname">✌️ developer</p>
+      </div>
+
+
+      <div id="line"></div>
+      
+      <div id="quote">
+        <p>[Programming is] an aesthetic experience much like composing poetry or painting.</p>
+        <footer>Donald Knuth</footer>
+      </div>
+  
+    </div>
+    
+    <script>
+    </script>
+    
+  </body>
+</html>
