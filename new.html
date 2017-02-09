@@ -36,6 +36,10 @@
         text-align: right;
         padding-right: 10px;
         font-size: 2.5em;
+        
+        transform: translateY(50%);
+        opacity: 0;
+        transition: all 0.8s;
       }
       
       #name {
@@ -55,7 +59,7 @@
       }
       
       #line {
-        border-left: 1px solid #e06c75;
+        border-right: 1px solid #e06c75;
         height: 100%;
       }
       
@@ -71,6 +75,10 @@
         position:absolute;
         bottom: 0px;
         left: 50%;
+        
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: all 0.8s;
       }
       
       #quote p {
@@ -86,9 +94,11 @@
       
       #quote p::before {
         content: "\201C";
+        margin-right: 5px;
       }
       #quote p::after {
         content: "\201E";
+        margin-left: 5px;
       }
       
       #quote p::before, #quote p::after {
@@ -97,6 +107,24 @@
       
       #quote footer::before {
         content: '\2014 \00A0';
+      }
+      
+      .block {
+        background-color: white;
+        width: 80%;
+        position: absolute;
+        height: 500px;
+      }
+      
+      #about {
+        top: 90%;
+        z-index: 50;
+        right: 0px;
+      }
+      #know {
+        top: 130%;
+        z-index: 100;
+        box-shadow: -5px 5px 20px 0px rgba(0,0,0,1);
       }
     </style>
 
@@ -108,18 +136,32 @@
         <h1 id="name">Niccolò Marcon</h1>
         <p id="subname">✌️ developer</p>
       </div>
-
-
       <div id="line"></div>
-      
       <div id="quote">
-        <p>[Programming is] an aesthetic experience much like composing poetry or painting.</p>
-        <footer>Donald Knuth</footer>
+        <p></p>
+        <footer></footer>
       </div>
-  
     </div>
     
+    <div class="block" id="about"></div>
+    <div class="block" id="know"></div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
+      $(document).ready(function() {
+        function writeQuote(quote, author) {
+          $('#quote p').text(quote);
+          $('#quote footer').text(author);
+        }
+
+        $.getJSON('js/quotes.json', function(data) {
+          var random = Math.floor((Math.random() * data.length));
+          writeQuote(data[random].quote, data[random].author);
+        });
+        
+        $('#quote').css('transform', 'none').css('opacity', 1);
+        $('#title').css('transform', 'none').css('opacity', 1);
+      });
     </script>
     
   </body>
