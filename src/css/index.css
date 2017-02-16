@@ -1,0 +1,108 @@
+body {
+  height: 100vh;
+  margin: 0;
+  position: relative;
+/*  background-image: linear-gradient(to bottom right, #d13b80, #2c337e);*/
+/*  background-image: linear-gradient(to bottom right, #c642c9, #bffdd4);*/
+/*  background-image: linear-gradient(to left top, rgb(39, 93, 212), rgb(238, 112, 109));*/
+}
+
+.landing {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing h1 {
+  font-family: 'Galada', serif;
+  color: white;
+  font-size: 10em;
+}
+
+h1:after {
+  content: '';
+  display: block;
+  height: 10px;
+  width: 0px;
+  background-color: transparent;
+  transition: width .5s ease .5s, background .5s ease .5s;
+  transform: translateY(-80px);
+}
+
+.underline:after {
+  width: 100%;
+  background-color: white;
+}
+
+.uvc-x-large-triangle {
+  transform: rotate(180deg);
+  display: block;
+  margin-top: -100px;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  background: white;
+  display: block;
+}
+
+.works {
+  margin-top: -30px;
+}
+
+.infos {
+  text-align: center;
+  height: 240px;
+}
+
+.section h2, .section h3 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section h2 {
+  font-family: 'Kaushan Script';
+  font-size: 3.5em;
+  font-weight: 100;
+}
+
+.section h2:before {
+  display: inline-block;
+  content: '∆';
+  font-size: 1.5em;
+  transform: translate(-6px, 8px);
+}
+
+.section h3 {
+  font-family: 'Josefin Sans';
+  font-size: 1.3em;
+}
+
+.infos .fa {
+  font-size: 5em;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+
+.infos a:after {
+  content: none;
+}
+
+.fa-twitter { color: #1da1f3; }
+.fa-github { color: #000000; }
+.fa-linkedin-square { color: #0077b5; }
+
+a {
+  font-style: italic;
+  text-decoration: none;
+}
+
+a:after {
+  content: "⤴";
+  font-size: .5em;
+  display: inline-block;
+}

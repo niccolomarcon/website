@@ -5,32 +5,21 @@ module.exports = function(grunt) {
     uglify: {
       target: {
         files: {
-          'dist/js/main.min.js': 'js/main.js'
+          'dist/js/index.min.js': 'src/js/index.js'
         }
       }
     },
     cssmin: {
       target: {
         files: {
-          'dist/css/main.min.css': [
-            'css/font.css',
-            'css/main.css',
-            'css/print.css'
-          ]
-        }
-      }
-    },
-    minjson: {
-      compile: {
-        files: {
-          'dist/js/quotes.json': 'js/quotes.json'
+          'dist/css/index.min.css': 'src/css/index.css'
         }
       }
     },
     processhtml: {
       dist: {
         files: {
-          'dist/index.html': 'index.html'
+          'dist/index.html': 'src/index.html'
         }
       }
     },
@@ -38,10 +27,26 @@ module.exports = function(grunt) {
       main: {
         files: [
           {
+            expand: true,
+            cwd: 'src/',
+            flatten: true,
+            filter: 'isFile',
             src: 'favicon.ico',
             dest: 'dist/'
           },
           {
+            expand: true,
+            cwd: 'src/',
+            flatten: true,
+            filter: 'isFile',
+            src: 'CNAME',
+            dest: 'dist/'
+          },
+          {
+            expand: true,
+            cwd: 'src/',
+            flatten: true,
+            filter: 'isFile',
             src: 'robots.txt',
             dest: 'dist/',
           }
@@ -51,13 +56,10 @@ module.exports = function(grunt) {
     'gh-pages': {
       options: {
         base: 'dist'
+        // repo: 'https://example.com/other/repo.git'
+        // branch: 'branch'
       },
       src: ['**']
-    },
-    shell: {
-      dep: {
-        command: 'rm -rf ~/Sites/dist && cp -r dist ~/Sites'
-      }
     },
     imagemin: {
       static: {
@@ -65,8 +67,7 @@ module.exports = function(grunt) {
           optimizationLevel: 7
         },
         files: {
-          'dist/media/bg.jpg': 'media/bg.jpg',
-          'dist/media/og.png': 'media/og.png'
+          // 'dist/media/bg.jpg': 'src/media/bg.jpg'
         }
       }
     },
@@ -74,37 +75,87 @@ module.exports = function(grunt) {
       custom_option: {
         options: {
           dest: 'dist/',
-          siteRoot: 'http://niccolomarcon.github.io/website',
+          siteRoot: 'https://niccolomarcon.it /',
           priority: 1.0
         },
         files: [
           {
             expand: true,
-            cwd: './',
-            src: ['./index.html']
+            cwd: 'dist/',
+            src: ['**/*.html']
           }
         ]
       }
+    },
+    watch: {
+      html: {
+        files: 'src/**/*.html',
+        tasks: ['newer:processhtml', 'xml_sitemap']
+      },
+      css: {
+        files: 'src/css/**/*.css',
+        tasks: ['newer:cssmin']
+      },
+      js: {
+        files: 'src/js/**/*.js',
+        tasks: ['newer:uglify']
+      },
+      img: {
+        files: ['scr/media/**/*.gif', 'scr/media/**/*.png', 'scr/media/**/*.jpg', 'scr/media/**/*.jpeg'],
+        tasks: ['newer:imagemin:static']
+      },
+      other_files: {
+        files: ['src/favicon.ico', 'src/robots.txt'],
+        tasks: ['newer:copy']
+      }
+    },
+    browserSync: {
+      dev: {
+        bsFiles: {
+          src : ['dist/**/*.*']
+        },
+        options: {
+          watchTask: true,
+          server: './dist',
+          port: 8080,
+          ghostMode: true,
+          open: 'local'
+        }
+      }
+    },
+    cloudflare_purge: {
+      default: {
+        options: {
+          apiKey: process.env.API,
+          email: process.env.MAIL,
+          zone: "niccolomarcon.it"
+        }
+      }
+    },
+    env : {
+      dist : {
+      src : ".env"
     }
+  }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-minjson');
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-gh-pages');
-  grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-xml-sitemap');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-env');
 
   var msg = grunt.option('m') || '';
 
   grunt.registerTask('default', [
     'uglify',
     'cssmin',
-    'minjson',
     'processhtml',
     'newer:imagemin:static',
     'copy',
@@ -114,7 +165,9 @@ module.exports = function(grunt) {
     grunt.task.run('default');
     if (msg != '') { grunt.config.set('gh-pages.options.message', msg); }
     grunt.task.run('gh-pages');
+    grunt.task.run('env:dist');
+    grunt.task.run('cloudflare_purge');
   });
-  grunt.registerTask('local', ['default', 'shell:dep']);
+  grunt.registerTask('local', ['default', 'browserSync', 'watch']);
 
 };
