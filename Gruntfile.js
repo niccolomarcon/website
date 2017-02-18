@@ -67,7 +67,10 @@ module.exports = function(grunt) {
           optimizationLevel: 7
         },
         files: {
-          // 'dist/media/bg.jpg': 'src/media/bg.jpg'
+          'dist/media/collektr.png': 'src/media/collektr.png',
+          'dist/media/cristina.png': 'src/media/cristina.png',
+          'dist/media/mnist.png': 'src/media/mnist.png',
+          'dist/media/mr-roboto.png': 'src/media/mr-roboto.png'
         }
       }
     },
@@ -75,7 +78,7 @@ module.exports = function(grunt) {
       custom_option: {
         options: {
           dest: 'dist/',
-          siteRoot: 'https://niccolomarcon.it /',
+          siteRoot: 'https://niccolomarcon.it/',
           priority: 1.0
         },
         files: [

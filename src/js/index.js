@@ -24,5 +24,5 @@ function randomGradient() {
 $(document).ready(function() {
   $('body').css('background-image', randomGradient());
   $('.landing h1').addClass('underline');
-  $('a').css('color', linkColor);
+  $('a:not(.blue-link)').css('color', linkColor);
 });
