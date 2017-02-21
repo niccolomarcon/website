@@ -65,16 +65,17 @@ h1:after {
 }
 
 .section h2 {
-  font-family: 'Kaushan Script';
+  font-family: 'Kaushan Script', serif;
   font-size: 3.5em;
   font-weight: 100;
 }
 
 .section h2:before {
   display: inline-block;
-  content: '∆';
-  font-size: 1.5em;
-  transform: translate(-6px, 8px);
+  content: url('data:image/svg+xml; utf8, <svg viewBox="0 0 1900 1900" xmlns="http://www.w3.org/2000/svg"><path stroke="null" d="M393.3 1617.5l608.67-1388.53H1036l575 1388.53m-239.62-85.1L965.93 535.3l-438.48 997.1h843.93z"/></svg>');
+  width: 1.5em;
+  transform: translate(-18px, 23px);
+  margin-right: -31px;
 }
 
 .section h3 {

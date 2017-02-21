@@ -5,8 +5,23 @@ function randomColor() {
   return ('000000' + color).slice(-6);
 }
 
+function convertToRGB(color) {
+  return color.match(/.{1,2}/g).map(function(component) {
+    return parseInt(component, 16);
+  });
+}
+
+function luminance(color) {
+  color = convertToRGB(color);
+  return (0.2126 * color[0] + 0.7152 * color[1] + 0.0722 * color[2]);
+}
+
 function darkestBetween(color, colour) {
-  return color < colour ? color : colour;
+  if (luminance(color) > luminance(colour)) {
+    return colour;
+  } else {
+    return color;
+  }
 }
 
 function randomDirection() {
