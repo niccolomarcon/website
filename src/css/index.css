@@ -3,6 +3,7 @@ body {
   margin: 0;
   position: relative;
   font-family: 'Josefin Sans';
+  overflow-x: hidden;
 /*  background-image: linear-gradient(to bottom right, #d13b80, #2c337e);*/
 /*  background-image: linear-gradient(to bottom right, #c642c9, #bffdd4);*/
 /*  background-image: linear-gradient(to left top, rgb(39, 93, 212), rgb(238, 112, 109));*/
@@ -109,13 +110,14 @@ a:after {
 }
 
 .blocks {
-  width: 80vw;
-  margin: 20px 10%;
+  margin: 20px 0;
+  padding: 0 calc((100vw - (288px * 4)) / 2);
+  width: 100%;
 }
 
 .block {
-  width: calc(80vw / 4);
-  height: calc(80vw / 4);
+  width: 288px;
+  height: 288px;
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -182,4 +184,46 @@ a:after {
 
 .block:hover .filter {
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 1200px) {
+  .blocks { padding: 0 calc((100vw - (288px * 2)) / 2); }
+}
+
+@media screen and (max-width: 1000px) {
+  .landing h1 { font-size: 7em; }
+  h1:after {
+    height: 7px;
+    transform: translateY(-55px);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .underline:after {
+    width: 0%;
+    transition: none;
+  }
+  .landing h1 {
+    line-height: 100px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blocks {
+    margin: 20px 0;
+    padding: 0 10vw;
+  }
+  .block {
+    width: 80vw;
+    height: 80vw;
+    margin: -2px 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .landing h1 {
+    font-size: 5em;
+    line-height: 80px;
+  }
 }
