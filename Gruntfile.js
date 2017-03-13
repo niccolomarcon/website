@@ -70,6 +70,7 @@ module.exports = function(grunt) {
           'dist/media/collektr.png': 'src/media/collektr.png',
           'dist/media/cristina.png': 'src/media/cristina.png',
           'dist/media/mnist.png': 'src/media/mnist.png',
+          'dist/media/cities.png': 'src/media/cities.png',
           'dist/media/mr-roboto.png': 'src/media/mr-roboto.png'
         }
       }

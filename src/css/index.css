@@ -1,3 +1,8 @@
+html {
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
   height: 100vh;
   margin: 0;
@@ -57,7 +62,6 @@ h1:after {
 
 .infos {
   text-align: center;
-  height: 240px;
 }
 
 .section h2, .section h3 {
@@ -110,9 +114,9 @@ a:after {
 }
 
 .blocks {
-  margin: 20px calc((100vw - (288px * 4)) / 2);
-  width: calc(288px * 4);
+  width: auto;
   text-align: center;
+  padding: 0 calc((100vw - (288px * 5)) / 2);
 }
 
 .block {
@@ -121,7 +125,6 @@ a:after {
   display: inline-block;
   position: relative;
   overflow: hidden;
-  box-sizing: border-box;
   margin: -2px;
 }
 
@@ -189,10 +192,15 @@ a:after {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+@media screen and (max-width: 1500px) {
+  .blocks {
+    padding: 0 calc((100vw - (288px * 4)) / 2);
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .blocks {
-    margin: 20px calc((100vw - (288px * 2)) / 2);
-    width: calc(288px * 2);
+    padding: 0 calc((100vw - (288px * 3)) / 2);
   }
 }
 
@@ -201,6 +209,12 @@ a:after {
   h1:after {
     height: 7px;
     transform: translateY(-55px);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .blocks {
+    padding: 0 calc((100vw - (288px * 2)) / 2);
   }
 }
 
@@ -227,5 +241,8 @@ a:after {
   .landing h1 {
     font-size: 5em;
     line-height: 80px;
+  }
+  .infos h2 {
+    font-size: 3em;
   }
 }
