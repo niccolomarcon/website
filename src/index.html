@@ -53,51 +53,6 @@
       <h2>Works</h2>
       <h3>Some of my works! Currently I'm studing @ <a target="_blank" href="http://unitn.it/">Trento's University</a> 🤓</h3>
       <div class="blocks">
-        <div class="block">
-          <img src="media/mr-roboto.png">
-          <div class="filter"></div>
-          <div class="description">
-            <h4>Mr. Roboto</h4>
-            Simple design created around the original idea of my buddy Luca Marzari. A t-shirt is also available.
-          </div>
-          <a href="https://niccolomarcon.github.io/mr-roboto/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
-        </div>
-        <div class="block">
-          <img src="media/collektr.png">
-          <div class="filter"></div>
-          <div class="description">
-            <h4>Jquery Collektr</h4>
-            Jquery plugin made while working @ <a class="blue-link" href="https://develon.it/" target="_blank">Develon</a>. It make easier to embed their product in your page.
-          </div>
-          <a href="https://github.com/niccolomarcon/jquery-collektr" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
-        </div>
-        <div class="block">
-          <img src="media/cristina.png">
-          <div class="filter"></div>
-          <div class="description">
-            <h4>Cristina Urasini</h4>
-            Cristina Urasini's personal website.
-          </div>
-          <a href="https://cristinaurasini.it/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
-        </div>
-        <div class="block">
-          <img src="media/mnist.png">
-          <div class="filter"></div>
-          <div class="description">
-            <h4>DigitRecogniser</h4>
-            The thesis for my high school diploma. It uses a neural network written in Python to recognise handwritten digits.
-          </div>
-          <a href="http://niccolomarcon.github.io/DigitRecogniser/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
-        </div>
-        <div class="block">
-          <img src="media/cities.png">
-          <div class="filter"></div>
-          <div class="description">
-            <h4>Cities by night</h4>
-            A really bad joke (or not?) that I like a lot for some strange reasons.
-          </div>
-          <a href="http://niccolomarcon.github.io/citiesbynight/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
-        </div>
       </div>
       <h3>If you want, here is my <a target="_blank" href="https://goo.gl/br576K">resumé</a></h3>
     </div>
@@ -110,8 +65,22 @@
       <a target="_blank" href="https://codepen.io/niccolomarcon/" title="Codepen"><i class="fa fa-codepen" aria-hidden="true"></i></a>
     </div>
 
+    <script id="work-template" type="text/x-handlebars-template">
+    <div class="block">
+      <img src="media/{{imgName}}">
+      <div class="filter"></div>
+      <div class="description">
+        <h4>{{title}}</h4>
+        {{{description}}}
+      </div>
+      <a href="{{link}}" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+    </div>
+    </script>
     <!-- build:[src] https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js -->
     <script defer src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- /build -->
+    <!-- build:[src] https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js -->
+    <script defer src="../node_modules/handlebars/dist/handlebars.min.js"></script>
     <!-- /build -->
     <!-- build:[src] js/index.min.js -->
     <script defer src="js/index.js"></script>

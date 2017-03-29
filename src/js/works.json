@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Mr. Roboto",
+    "description": "Simple design created around the original idea of my buddy Luca Marzari. A t-shirt is also available.",
+    "imgName": "mr-roboto.png",
+    "link": "https://niccolomarcon.github.io/mr-roboto/"
+  },
+  {
+    "title": "Jquery Collektr",
+    "description": "Jquery plugin made while working @ [Develon](https://develon.it/). It make easier to embed their product in your page.",
+    "imgName": "collektr.png",
+    "link": "https://github.com/niccolomarcon/jquery-collektr/"
+  },
+  {
+    "title": "Cristina Urasini",
+    "description": "Cristina Urasini's personal website.",
+    "imgName": "cristina.png",
+    "link": "https://cristinaurasini.it/"
+  },
+  {
+    "title": "DigitRecogniser",
+    "description": "The thesis for my high school diploma. It uses a neural network written in Python to recognise handwritten digits.",
+    "imgName": "mnist.png",
+    "link": "http://niccolomarcon.github.io/DigitRecogniser/"
+  },
+  {
+    "title": "Cities by Night",
+    "description": "A really bad joke (or not?) that I like a lot for some strange reasons.",
+    "imgName": "cities.png",
+    "link": "https://niccolomarcon.github.io/citiesbynight/"
+  }
+]

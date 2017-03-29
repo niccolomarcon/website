@@ -1,4 +1,6 @@
 var linkColor;
+var template;
+var worksJson = 'js/works.json';
 
 function randomColor() {
   var color = Math.floor(Math.random() * 16777215).toString(16);
@@ -36,7 +38,33 @@ function randomGradient() {
   return 'linear-gradient(to ' + randomDirection() + ', #' + firstColor + ', #' + secondColor + ')';
 }
 
+function convertLinks(text) {
+  return text.split(' ').map(function(word, i, a) {
+    var regex = /\[(.+)\]\((.+)\)(.*)/g;
+    var match = regex.exec(word);
+    return match !== null ? '<a class="blue-link" href="' + match[2] + '" target="_blank">' + match[1] + '</a>' + match[3] : word; 
+  }).join(' ');
+}
+
+function createWork(work) {
+  work.description = convertLinks(work.description);
+  $('.blocks').append(template(work));
+}
+
+function getWorks() {
+  $.getJSON(worksJson, function(data) {
+    data.forEach(createWork);
+  });
+}
+
+function setUpHandlebars() {
+  var source = $("#work-template").html();
+  template = Handlebars.compile(source);
+}
+
 $(document).ready(function() {
+  setUpHandlebars();
+  getWorks();
   $('body').css('background-image', randomGradient());
   $('.landing h1').addClass('underline');
   $('a:not(.blue-link)').css('color', linkColor);

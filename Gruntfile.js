@@ -9,6 +9,13 @@ module.exports = function(grunt) {
         }
       }
     },
+    minjson: {
+      compile: {
+        files: {
+          'dist/js/works.json': 'src/js/works.json'
+        }
+      }
+    },
     cssmin: {
       target: {
         files: {
@@ -154,11 +161,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-env');
+  grunt.loadNpmTasks('grunt-minjson');
 
   var msg = grunt.option('m') || '';
 
   grunt.registerTask('default', [
     'uglify',
+    'minjson',
     'cssmin',
     'processhtml',
     'newer:imagemin:static',
