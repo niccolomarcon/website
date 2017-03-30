@@ -194,6 +194,13 @@ a:after {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+}
+
 @media screen and (max-width: 1500px) {
   .blocks {
     padding: 0 calc((100vw - (288px * 4)) / 2);

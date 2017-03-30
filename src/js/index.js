@@ -47,7 +47,7 @@ function convertLinks(text) {
 }
 
 function createWork(work) {
-  work.description = convertLinks(work.description);
+  work.description = twemoji.parse(convertLinks(work.description));
   $('.blocks').append(template(work));
 }
 
@@ -65,6 +65,7 @@ function setUpHandlebars() {
 $(document).ready(function() {
   setUpHandlebars();
   getWorks();
+  twemoji.parse(document.body);
   $('body').css('background-image', randomGradient());
   $('.landing h1').addClass('underline');
   $('a:not(.blue-link)').css('color', linkColor);
