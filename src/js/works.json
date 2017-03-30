@@ -15,13 +15,15 @@
     "title": "Cristina Urasini",
     "description": "Cristina Urasini's personal website, designed and developed with ♥️.",
     "imgName": "cristina.png",
-    "link": "https://cristinaurasini.it/"
+    "link": "https://cristinaurasini.it/",
+    "white": true
   },
   {
     "title": "DigitRecogniser",
     "description": "The thesis for my high school diploma. It uses a neural network written in Python to recognise handwritten digits.",
     "imgName": "mnist.png",
-    "link": "http://niccolomarcon.github.io/DigitRecogniser/"
+    "link": "http://niccolomarcon.github.io/DigitRecogniser/",
+    "white": true
   },
   {
     "title": "Cities by Night",
