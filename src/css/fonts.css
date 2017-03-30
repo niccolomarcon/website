@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Galada';
+  src: url('fonts/Galada/Galada-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('fonts/Josefin_Sans/JosefinSans-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Kaushan Script';
+  src: url('fonts/Kaushan_Script/KaushanScript-Regular.ttf')  format('truetype');
+}
