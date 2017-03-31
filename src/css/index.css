@@ -264,6 +264,12 @@ img.emoji {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .infos .fa {
+    font-size: 4em;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .landing h1 {
     font-size: 5em;
@@ -273,6 +279,6 @@ img.emoji {
     font-size: 3em;
   }
   .infos .fa {
-    font-size: 4em;
+    font-size: 3em;
   }
 }
