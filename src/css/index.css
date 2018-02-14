@@ -132,7 +132,7 @@ a:after {
   display: inline-block;
   position: relative;
   overflow: hidden;
-  margin: -2px;
+  margin: 0 -3px -4px;
 }
 
 .block.black {
