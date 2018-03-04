@@ -94,7 +94,7 @@ h1:after {
   display: inline-block;
 }
 
-.infos a:after {
+.infos a:after, .hackathon a:after {
   content: none;
 }
 
@@ -203,6 +203,26 @@ a:after {
 
 .block:hover .filter {
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hackathon-list {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.hackathon {
+  display: inline-block;
+  text-align: center;
+  margin: 0px 10px;
+}
+
+.hackathon img {
+  height: 200px;
+}
+
+.hackathon p {
+  font-weight: bold;
+  font-style: italic;
 }
 
 img.emoji {
