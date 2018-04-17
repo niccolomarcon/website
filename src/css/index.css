@@ -232,6 +232,44 @@ img.emoji {
   vertical-align: -0.1em;
 }
 
+.quote {
+  color: white;
+}
+
+.quote p {
+  margin: 0;
+}
+
+p.phrase {
+  font-size: 3.5em;
+  font-weight: 100;
+  text-align: center;
+}
+
+p.phrase:before, p.phrase:after {
+  font-family: 'Galada', serif;
+}
+
+p.phrase:before {
+  content: "“";
+}
+
+p.phrase:after {
+  content: "”";
+}
+
+p.author {
+  font-family: 'Kaushan Script', serif;
+  font-size: 2em;
+  font-weight: 100;
+  margin-top: -1em;
+  text-align: right;
+}
+
+p.author:before {
+  content: "-"
+}
+
 @media screen and (max-width: 1500px) {
   .blocks {
     padding: 0 calc((100vw - (288px * 4)) / 2);
