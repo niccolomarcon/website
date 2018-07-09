@@ -168,6 +168,7 @@ a:after {
   padding: 10px;
   text-align: justify;
   z-index: 3;
+  font-weight: 600;
 }
 
 .blue-link {
@@ -232,8 +233,14 @@ img.emoji {
   vertical-align: -0.1em;
 }
 
+.content {
+  max-width: 970px;
+}
+
 .quote {
   color: white;
+  height: 0px;
+  transform: translateY(-100px);
 }
 
 .quote p {
@@ -241,7 +248,7 @@ img.emoji {
 }
 
 p.phrase {
-  font-size: 3.5em;
+  font-size: 2em;
   font-weight: 100;
   text-align: center;
 }
@@ -260,10 +267,10 @@ p.phrase:after {
 
 p.author {
   font-family: 'Kaushan Script', serif;
-  font-size: 2em;
+  font-size: 1.3em;
   font-weight: 100;
-  margin-top: -1em;
-  text-align: right;
+  margin-top: 0;
+  text-align: center;
 }
 
 p.author:before {
@@ -288,6 +295,9 @@ p.author:before {
     height: 7px;
     transform: translateY(-55px);
   }
+  .content {
+    max-width: 679px;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -304,6 +314,9 @@ p.author:before {
   .landing h1 {
     line-height: 100px;
     text-align: center;
+  }
+  .content {
+    transform: translateY(-25px);
   }
 }
 

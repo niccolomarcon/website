@@ -12,7 +12,8 @@ module.exports = function(grunt) {
     minjson: {
       compile: {
         files: {
-          'dist/js/works.json': 'src/js/works.json'
+          'dist/js/works.json': 'src/js/works.json',
+          'dist/js/quotes.json': 'src/js/quotes.json'
         }
       }
     },
@@ -78,7 +79,11 @@ module.exports = function(grunt) {
           'dist/media/cristina.png': 'src/media/cristina.png',
           'dist/media/mnist.png': 'src/media/mnist.png',
           'dist/media/cities.png': 'src/media/cities.png',
-          'dist/media/mr-roboto.png': 'src/media/mr-roboto.png'
+          'dist/media/mr-roboto.png': 'src/media/mr-roboto.png',
+          'dist/media/hashcode.png': 'src/media/hashcode.png',
+          'dist/media/Nasa_SpaceApps_Vicenza_70x100-1.width-800.jpg': 'src/media/Nasa_SpaceApps_Vicenza_70x100-1.width-800.jpg',
+          'dist/media/100100mini.png': 'src/media/100100mini.png',
+          'dist/media/DSC02947.jpg': 'src/media/DSC02947.jpg'
         }
       }
     },

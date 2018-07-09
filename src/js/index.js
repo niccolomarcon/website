@@ -1,11 +1,8 @@
 var linkColor;
 var template;
 var worksJson = 'js/works.json';
-
-function randomColor() {
-  var color = Math.floor(Math.random() * 16777215).toString(16);
-  return ('000000' + color).slice(-6);
-}
+var quotesJson = 'js/quotes.json';
+var contrastThreshold = 2;
 
 function convertToRGB(color) {
   return color.match(/.{1,2}/g).map(function(component) {
@@ -26,9 +23,24 @@ function darkestBetween(color, colour) {
   }
 }
 
+function isValidColor(color) {
+  var L1 = luminance('FFFFFF');
+  var L2 = luminance(color);
+  return (L1 + 0.05) / (L2 + 0.05) > contrastThreshold;
+}
+
 function randomDirection() {
   var index = Math.floor(Math.random() * 4);
   return ['bottom left', 'bottom right', 'top left', 'top right'][index];
+}
+
+function randomColor() {
+  var color;
+  do {
+    color = Math.floor(Math.random() * 16777215).toString(16);
+    color = ('000000' + color).slice(-6);
+  } while (!isValidColor(color));
+  return color;
 }
 
 function randomGradient() {
@@ -62,9 +74,48 @@ function setUpHandlebars() {
   template = Handlebars.compile(source);
 }
 
+function writeQuote(quote, author) {
+  $('p.phrase').text(quote);
+  $('p.author').text(author);
+  $('.quote').fadeIn('slow');
+}
+
+function changeQuote(quote, author) {
+  $('.quote').fadeOut('slow', function() { writeQuote(quote, author); });
+}
+
+function getQuote() {
+  $.getJSON(quotesJson, function(data) {
+    var random = Math.floor((Math.random() * data.length));
+    writeQuote(data[random].quote, data[random].author);
+  });
+  
+  // Someone said Konami code(?)
+  new Konamiz(['4', '2']).onStart(function() {
+    changeQuote(
+      'The Ultimate Question of Life, the Universe and Everything.',
+      'Deep Thought'
+    );
+  });
+  new Konamiz(['c', 'h', 'u', 'c', 'k']).onStart(function() {
+    var url = 'http://api.icndb.com/jokes/random';
+    var opt = {
+      escape: 'javascript',
+      limitTo: '[nerdy]'
+    };
+    $.getJSON(url, opt, function(data) {
+      changeQuote(
+        data.value.joke,
+        'Chuck\'s life'
+      );
+    });
+  });
+}
+
 $(document).ready(function() {
   setUpHandlebars();
   getWorks();
+  getQuote();
   twemoji.parse(document.body);
   $('body').css('background-image', randomGradient());
   $('.landing h1').addClass('underline');
