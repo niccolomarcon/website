@@ -83,7 +83,8 @@ module.exports = function(grunt) {
           'dist/media/hashcode.png': 'src/media/hashcode.png',
           'dist/media/Nasa_SpaceApps_Vicenza_70x100-1.width-800.jpg': 'src/media/Nasa_SpaceApps_Vicenza_70x100-1.width-800.jpg',
           'dist/media/100100mini.png': 'src/media/100100mini.png',
-          'dist/media/DSC02947.jpg': 'src/media/DSC02947.jpg'
+          'dist/media/DSC02947.jpg': 'src/media/DSC02947.jpg',
+          'dist/media/Book0291.jpg': 'src/media/Book0291.jpg',
         }
       }
     },

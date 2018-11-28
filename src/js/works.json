@@ -33,8 +33,14 @@
   },
   {
     "title": "2018 HashCode",
-    "description": "My team's solutions for the 2018 HashCode Qualification Round. We placed 314°, like π :)",
+    "description": "My team's solutions for the 2018 HashCode Qualification Round. We placed 314°, like π c:",
     "imgName": "DSC02947.jpg",
     "link": "https://github.com/CodiceLoco/hashcode_2018"
+  },
+  {
+    "title": "LFC",
+    "description": "Implementations of the concepts seen in the course of Formal Languages & Compilers.",
+    "imgName": "Book0291.jpg",
+    "link": "https://github.com/niccolomarcon/lfc"
   }
 ]
